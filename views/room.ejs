@@ -1,0 +1,167 @@
+<div class="main-wrapper">
+    <div id="video-grid"></div>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <div class="footer-elements-wrapper">
+        <button id="share-toggle" class="footer-elements tooltip" tool_tip="Share Meeting link">
+          <ion-icon name="paper-plane-outline"></ion-icon>
+        </button>
+        <button id="video-toggle" class="footer-elements tooltip" tool_tip="Video Off">
+          <ion-icon name="videocam-outline"></ion-icon>
+        </button>
+        <button id="mic-toggle" class="footer-elements tooltip" tool_tip="Microphone Off">
+          <ion-icon name="mic-outline"></ion-icon>
+        </button>
+        <button id="recording-toggle" class="footer-elements tooltip" tool_tip="Start Recording">
+          <ion-icon name="recording-outline"></ion-icon>
+          </ion-icon>
+        </button>
+        <button id="cams-toggle" class="footer-elements tooltip" tool_tip="Change the camera">
+          <ion-icon name="sync-outline"></ion-icon>
+        </button>
+        <button id="share-screen" class="footer-elements tooltip"  tool_tip="Present Screen">
+          <ion-icon name="tv-outline"></ion-icon>
+        </button>
+        <button id="meeting-toggle" class="footer-elements call-button tooltip" tool_tip="Join the Meeting">
+          <ion-icon name="call-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="options-wrapper">
+        <button class="footer-elements">
+          <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </footer>
+  <div class="tool-bar-wrapper">
+    <button id="peoples-count" class="tool-bar-button">
+      <ion-icon name="people-outline"></ion-icon>
+      <span class="user-number" id="user-number">
+        <%= count %>
+      </span>
+    </button>
+    <button id="message-box" class="tool-bar-button">
+      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+    </button>
+    <button id="time" class="tool-bar-button">
+      00:00 AM
+    </button>
+  </div>
+  <div class="dialogue-container">
+    <div class="dialogue-head">
+      <p class="dialogue-title">Your meeting's ready</p>
+      <button id="close-dialogue" class="dialogue-button">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="dialogue-body">
+      <p>Share this meeting link with others you want in the meeting</p>
+      <div class="share-container">
+        <p class="share-link">meet.google.com/sij-dwa-zjm</p>
+        <button id="copy-button" class="dialogue-button tooltip" tool_tip="copy"
+          meeting_link="meet.google.com/sij-dwa-zjm">
+          <ion-icon name="copy-outline"></ion-icon>
+        </button>
+      </div>
+      <p class="caption">Joined as <%= user.name %>
+      </p>
+    </div>
+  </div>
+  <div id="chat-panel" class="chat-box-wrapper">
+    <div class="chat-box-header">
+      <div class="chat-box-headline">
+        <ion-icon name="chatbox-outline"></ion-icon>
+        <span>Chat</span>
+      </div>
+      <button id="chat-close-button" class="cross-button">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="chat-box">
+  
+    </div>
+    <div class="chat-box-control">
+      <form class="chat-input-wrapper">
+        <div class="input-box-wrapper" chat-id="asdf">
+          <input type="text" class="chat-input" id="chat-input" placeholder="Send Message">
+        </div>
+        <button type="submit" class="chat-input-button">
+          <ion-icon name="send-outline"></ion-icon>
+        </button>
+      </form>
+      
+      <style>
+        
+      </style>
+
+    </div>
+  </div>
+  <script>
+  </script>
+  <script>
+    const messageBoxButton = document.getElementById('message-box')
+    const chatCloseButton = document.getElementById('chat-close-button')
+    chatCloseButton.addEventListener('click', e => {
+      const chatPanel = document.getElementById('chat-panel')
+      const toolBarWrapper = document.querySelector('.tool-bar-wrapper')
+      toolBarWrapper.classList.toggle('hide-tool-bar')
+      chatPanel.classList.toggle('display-chat-panel')
+    })
+    messageBoxButton.addEventListener('click', e => {
+      if (e.target.classList.contains('dot'))
+        e.target.classList.remove('dot')
+      const chatPanel = document.getElementById('chat-panel')
+      const toolBarWrapper = document.querySelector('.tool-bar-wrapper')
+      toolBarWrapper.classList.toggle('hide-tool-bar')
+      chatPanel.classList.toggle('display-chat-panel')
+    })
+  </script>
+  <script>
+    const setTime = () => {
+      const timeButton = document.getElementById('time')
+      var time = new Date();
+      timeButton.innerHTML = `${time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
+    }
+    setTime()
+    setInterval(() => {
+      setTime()
+    }, 500);
+    const shareToggleButton = document.getElementById('share-toggle')
+    shareToggleButton.addEventListener('click', e => {
+      const dialogue = document.querySelector('.dialogue-container')
+      dialogue.classList.toggle('dialogue-active')
+    })
+    const copyButton = document.querySelector('#copy-button')
+    const shareLink = document.querySelector('.share-link')
+    shareLink.innerHTML = window.location.href
+    copyButton.setAttribute('meeting_link', window.location.href)
+    const dialogueCloseButton = document.querySelector('#close-dialogue')
+    dialogueCloseButton.addEventListener('click', (e) => {
+      const dialogue = document.querySelector('.dialogue-container')
+      dialogue.classList.toggle('dialogue-active')
+    })
+    copyButton.addEventListener("mousedown", (e) => {
+      const copyText = e.target.getAttribute('meeting_link')
+      navigator.clipboard.writeText(copyText);
+      e.target.setAttribute("tool_tip", 'copied');
+    });
+    copyButton.addEventListener("mouseout", (e) => {
+      e.target.setAttribute("tool_tip", 'copy');
+    });
+  </script>
+  <script>
+    const cameraBtn = document.querySelector('#cams-toggle')
+    cam = {}
+    function gotDevices(mediaDevices) {
+      let count = true;
+      mediaDevices.forEach((mediaDevice) => {
+        if (mediaDevice.kind === "videoinput") {
+          cam[mediaDevice.deviceId] = count;
+          count = false;
+        }
+      });
+      cameraBtn.setAttribute('camera', JSON.stringify(cam))
+    }
+    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+  </script>

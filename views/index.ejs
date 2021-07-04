@@ -1,0 +1,163 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid nav-contcnt">
+        <a class="navbar-brand" href="#" style="color:#e6e9ec;"> <span style="font-weight: bold;">Microsoft Teams</span> </a>
+        <div class="d-flex">
+            <p class="m-0 px-3" style="font-weight: bold; color:#e6e9ec;">
+                <%= user.name %>
+            </p>
+            <a class="icon" href="#">
+                <ion-icon name="help-circle-outline"></ion-icon>
+            </a>
+            <a class="icon" href="#">
+                <ion-icon name="alert-circle-outline"></ion-icon>
+            </a>
+            <a class="icon" href="#">
+                <ion-icon name="settings-outline"></ion-icon>
+            </a>
+            <a class="icon" href="/logout">
+                <ion-icon name="exit-outline"></ion-icon>
+            </a>
+        </div>
+        <style>
+            @media (max-width: 440px) {
+                
+                .nav-contcnt {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .new-meeting {
+                    width: 124px;
+                    white-space: nowrap;
+                }
+            }
+            .icon {
+                text-decoration: none;
+                color: #e6e9ec;
+                padding: 0rem .25rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: .25rem;
+                margin: 0rem .35rem;
+            }
+            .icon:hover {
+                background-color: rgb(197, 197, 197);
+                color: #5F6368;
+            }
+            .icon ion-icon {
+                font-size: 1.7rem;
+            }
+            .bg-light{
+                    background-color: #6264a7!important;
+                }
+        </style>
+    </div>
+</nav>
+<div class="container py-5">
+    <div class="row g-3">
+        <!--<div class="col-md-6">-->
+            <div class="card" style="box-shadow: 0 0 5px #b8b8b8;">
+                <div class="card-body">
+                    <img src="/images/ss.png" width="100%" class="rounded" alt="">
+                </div>
+            <h1 class="mb-3">
+                Join the session with Microsoft Teams
+            </h1>
+           <!-- <p style="color: #5F6368;">We re-engineered the service we built for secure business meetings, Google Meet,
+                to make it free and
+                available for all.</p>-->
+            <div class="a123 my-5" style="display: flex; margin-left: auto; margin-right: auto; ">
+                <a class="btn btn-primary new-meeting" style="width: 180px;" href="/new-meeting" role="button">New
+                    Meeting</a>
+                <form action="join-room" style="margin-left: 1rem;" method="POST">
+                    <div class="input-group ">
+                        <span class="input-group-text" id="inputGroup-sizing-default">
+                            <ion-icon name="planet-outline"></ion-icon>
+                        </span>
+                        <input name="room_id" type="text" class="form-control" placeholder="Enter a code or Link"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                          <button class="btn btn-outline-primary" type="submit" id="button-addon2">Join</button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <p><a href="#" style="text-decoration: none;"></a>Premium Quality Video Conferencing Web-App</p>
+            
+        </div>
+        <style>
+            .mb-3{
+                text-align: center;
+                font-size: 45px;
+
+            }
+            .card-body{
+                width: 450px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 30px;
+                padding-bottom: 25px;
+            }
+            
+            .card{
+                background-color:whitesmoke;
+            }
+            
+            .btn-primary {
+                
+                background-color:  #6264a7;
+                border-color: #6264a7;
+
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                
+            }
+            .btn-primary:hover{
+                color: whitesmoke;
+                background-color:  #6264a7;
+                border-color: #6264a7;
+            }
+            .btn-outline-primary {
+                color: #6264a7;
+                border-color: #6264a7;
+                
+            }
+
+            .btn-outline-primary:hover{
+                color: whitesmoke;
+                background-color:  #6264a7;
+                border-color: #6264a7;
+                
+            }
+            
+
+        </style>
+
+       <!--</div>--> 
+    </div>
+</div>
+<!-- <div class="container py-5" style="display: flex; justify-content: center; align-items: center;">
+    <div class="card" style="width: 25rem;">
+        <div class="card-header">
+            Meeting
+        </div>
+        <div class="card-body">
+            <form action="/join-room" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Enter your Room Id</label>
+                    <input required name="room_id" class="form-control" placeholder="Room Id">
+                    <div class="form-text">You have to enter the room id to enter a specific room.
+                    </div>
+                </div>
+                <button style="width: 100%;" type="submit" class="btn btn-primary mb-3">Join</button>
+            </form>
+            <form action="/create-room" method="POST">
+                <button style="width: 100%;" type="submit" class="btn btn-success mb-3">Create room</button>
+            </form>
+            <a style="width: 100%;" type="submit" class="btn btn-danger">Log Out</a>
+        </div>
+    </div>
+</div> -->
