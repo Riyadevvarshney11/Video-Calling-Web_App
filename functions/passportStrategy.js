@@ -21,6 +21,7 @@ const passportAuthenticator = (passport, user) => {
   passport.deserializeUser((id, done) => {
     user.findById(id, (err, data) => {
       return done(null, data);
+      
     });
   });
 };
