@@ -8,7 +8,7 @@ const cookie = require("cookie-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const mongoose = require("mongoose");
-
+require('dotenv').config()
 const passportAuthenticator = require("./functions/passportStrategy");
 const user = require("./schema/user");
 const peerServer = ExpressPeerServer(server, {
@@ -23,15 +23,20 @@ const login = require("./routes/auth/login");
 const logout = require("./routes/auth/logout");
 const index = require("./routes/index");
 const newMeeting = require("./routes/newMeeting");
-mongoose
-    .connect(process.env.MONGO_URI, {
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
     })
     .then(() => {
         console.log("database connected");
+    })
+    .catch((error) => {
+        console.log("mongo error",error);
     });
+
+
 passportAuthenticator(passport, user);
 app.use(express.json());
 app.use("/peerjs", peerServer);
