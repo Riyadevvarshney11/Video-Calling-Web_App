@@ -25,13 +25,12 @@ const index = require("./routes/index");
 const newMeeting = require("./routes/newMeeting");
 mongoose
     .connect(process.env.MONGO_URI, {
-        useNewUrlParser: true, useUnifiedTopology: true },
-    function (err, res) {
-        try {
-            console.log('Connected to Database');
-        } catch (err) {
-            throw err;
-        }
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+    })
+    .then(() => {
+        console.log("database connected");
     });
 passportAuthenticator(passport, user);
 app.use(express.json());
