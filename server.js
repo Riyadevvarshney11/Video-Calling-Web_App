@@ -8,6 +8,7 @@ const cookie = require("cookie-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const mongoose = require("mongoose");
+
 const passportAuthenticator = require("./functions/passportStrategy");
 const user = require("./schema/user");
 const peerServer = ExpressPeerServer(server, {
