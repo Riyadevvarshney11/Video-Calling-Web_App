@@ -25,8 +25,29 @@ const logout = require("./routes/auth/logout");
 const index = require("./routes/index");
 const newMeeting = require("./routes/newMeeting");
 
-module.exports = async () => {
-    await mongoose.connect("mongodb+srv://riya:riya@videochat.ye8co.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&ssl=true", {
+const db = process.env.MONGO_URI;
+
+/*const connectDB = async () => {
+    try {
+        await
+        mongoose.connect(db, {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useFindAndModify: false
+        });
+        console.log("MongooseDB Connected ....");
+
+    } catch (err) {
+        console.log(err.message);
+        process.exit(1);
+    }
+
+}
+
+module.exports = connectDB;*/
+
+/*module.exports = async () => {
+    await mongoose.connect('mongodb+srv://riya:riya@videochat.ye8co.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&ssl=true', {
         keepAlive: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -39,8 +60,8 @@ module.exports = async () => {
             console.error('Error connecting to mongo', err);
         });
     return mongoose;
-};
-/*mongoose.connect(process.env.MONGO_URI, {
+};*/
+mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
@@ -50,7 +71,7 @@ module.exports = async () => {
     })
     .catch((error) => {
         console.log("mongo error",error);
-    }); */
+    }); 
 
 
 passportAuthenticator(passport, user);
