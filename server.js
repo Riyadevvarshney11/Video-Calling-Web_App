@@ -26,7 +26,7 @@ const index = require("./routes/index");
 const newMeeting = require("./routes/newMeeting");
 
 module.exports = async () => {
-    await mongoose.connect(process.env.MONGOPATH, {
+    await mongoose.connect("mongodb+srv://riya:riya@videochat.ye8co.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&ssl=true", {
         keepAlive: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
