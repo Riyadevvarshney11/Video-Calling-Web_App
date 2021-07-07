@@ -8,7 +8,8 @@ const cookie = require("cookie-session");
 const passport = require("passport");
 const flash = require("express-flash");
 const mongoose = require("mongoose");
-require('dotenv').config()
+const dotenv = require("dotenv");
+dotenv.config();
 const passportAuthenticator = require("./functions/passportStrategy");
 const user = require("./schema/user");
 const peerServer = ExpressPeerServer(server, {
@@ -23,8 +24,23 @@ const login = require("./routes/auth/login");
 const logout = require("./routes/auth/logout");
 const index = require("./routes/index");
 const newMeeting = require("./routes/newMeeting");
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI, {
+
+module.exports = async () => {
+    await mongoose.connect(process.env.MONGOPATH, {
+        keepAlive: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+    })
+        .then(x => {
+            console.log( "Connected");
+        })
+        .catch(err => {
+            console.error('Error connecting to mongo', err);
+        });
+    return mongoose;
+};
+/*mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
@@ -34,7 +50,7 @@ mongoose.connect(process.env.MONGO_URI, {
     })
     .catch((error) => {
         console.log("mongo error",error);
-    });
+    }); */
 
 
 passportAuthenticator(passport, user);
@@ -129,7 +145,7 @@ io.on("connection", (socket) => {
             });
             // chat
             socket.on("client-send", (data) => {
-                socket.to(roomId).broadcast.emit("client-podcast", data, name);
+                socket.to(roomId).emit("client-podcast", data, name);
             });
             socket.on("disconnect", async () => {
                 roomData = await room.findOne({ roomId: roomId }).exec();
