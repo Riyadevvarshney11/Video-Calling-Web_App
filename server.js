@@ -14,6 +14,7 @@ const passportAuthenticator = require("./functions/passportStrategy");
 const user = require("./schema/user");
 const peerServer = ExpressPeerServer(server, {
     debug: true,
+    allow_discovery: true
 });
 const peerUser = require("./schema/peerUser");
 const room = require("./schema/rooms");
