@@ -24,7 +24,6 @@ const login = require("./routes/auth/login");
 const logout = require("./routes/auth/logout");
 const index = require("./routes/index");
 const newMeeting = require("./routes/newMeeting");
-
 const db = process.env.MONGO_URI;
 
 /*const connectDB = async () => {
@@ -61,10 +60,10 @@ module.exports = connectDB;*/
         });
     return mongoose;
 };*/
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect('mongodb+srv://riya:riya@videochat.ye8co.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        // useFindAndModify: false,
+        useFindAndModify: false,
     })
     .then(() => {
         console.log("database connected");
