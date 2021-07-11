@@ -14,5 +14,5 @@ window.onload = function () {
     document.body.appendChild(loader);
     setTimeout(() => {
       loader.remove();
-    }, 3000);
+    }, 5000);
   };

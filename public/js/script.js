@@ -18,9 +18,6 @@ const videoGrid = document.getElementById("video-grid");
 // const name = prompt("Your name");
 const myPeer = new Peer();
 
-
-
-
 var Peer_ID;
 const myVideo = document.createElement("video");
 myVideo.muted = true;
