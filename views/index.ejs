@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid nav-contcnt">
-        <a class="navbar-brand" href="#" style="color:#e6e9ec;"> <span style="font-weight: bold;">Microsoft Teams</span> </a>
+        <a class="navbar-brand" href="#" style="color:#e6e9ec;"> <span style="font-weight: bold; font-family: 'Poppins', sans-serif;">Microsoft Teams</span> </a>
         <div class="d-flex">
-            <p class="m-0 px-3" style="font-weight: bold; color:#e6e9ec;">
+            <p class="m-0 px-3" style="font-weight: bold; font-family: 'Poppins', sans-serif; color:#e6e9ec;">
                 <%= user.name %>
             </p>
             <a class="icon" href="https://microsoft-chat.herokuapp.com/">
@@ -61,13 +61,13 @@
         <!--<div class="col-md-6">-->
             <div class="card" style="box-shadow: 0 0 5px #b8b8b8;">
                 <div class="card-body">
-                    <img src="/images/ss.png" width="100%" class="rounded" alt="">
+                    <img src="/images/ss1.png" width="100%" class="rounded" alt="">
                 </div>
             <h1 class="mb-3">
-                Join the session with Microsoft Teams
+                Meet, Chat, Call and Collaborate in just one place.
             </h1>
             <div class="a123 my-5" style="display: flex; margin-left: auto; margin-right: auto; ">
-                <a class="btn btn-primary new-meeting" style="width: 180px;" href="/new-meeting" role="button">New
+                <a class="btn btn-primary new-meeting" style="width: auto;" href="/new-meeting" role="button">Schedule New
                     Meeting</a>
                 <form action="join-room" style="margin-left: 1rem;" method="POST">
                     <div class="input-group ">
@@ -80,6 +80,48 @@
                     </div>
                 </form>
             </div>
+            <!-- Features Area-->          
+            <section id="featured-services" class="featured-services">
+                <div class="container" data-aos="fade-up">
+          
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                        <h4 class="title"><a>VIDEO CONFERENCING</a></h4>
+                        <p class="description">Enables Video and Audio calling.</p>
+                        <p class="description">Platform for event hosting and webinar.</p>
+                      </div>
+                    </div>
+          
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <h4 class="title"><a>REAL TIME CHAT SYSTEM</a></h4>
+                        <p class="description"> Allows Chat Coversations to take place between teams, groups, and individuals.</p>
+                      </div>
+                    </div>
+          
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="bx bx-tachometer"></i></div>
+                        <h4 class="title"><a>RECORD MEETING</a></h4>
+                        <p class="description">Easily record your meetings manually.</p>
+                      </div>
+                    </div>
+          
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="bx bx-world"></i></div>
+                        <h4 class="title"><a>SCREEN SHARING</a></h4>
+                        <p class="description">Easily share screen during the meeting with yuor attendees.</p>
+                      </div>
+                    </div>
+          
+                  </div>
+          
+                </div>
+              </section><!-- End Featured Services Section -->
             <hr>
             <p><a href="#" style="text-decoration: none;"></a>Premium Quality Video Conferencing Web-App</p>
             
@@ -87,11 +129,18 @@
         <style>
             .mb-3{
                 text-align: center;
-                font-size: 45px;
+                font-size: 42px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: bold;
+
+            }
+            .my-5{
+                margin-top: 2rem!important;
+                margin-bottom: 2rem!important;
 
             }
             .card-body{
-                width: 450px;
+                width: 620px;
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
@@ -105,7 +154,7 @@
             
             .btn-primary {
                 
-                background-color:  #6264a7;
+                background-color: #6264a7;
                 border-color: #6264a7;
 
                 cursor: pointer;
@@ -115,22 +164,92 @@
             }
             .btn-primary:hover{
                 color: whitesmoke;
-                background-color:  #6264a7;
+                background-color:  #5a51a8;
                 border-color: #6264a7;
             }
             .btn-outline-primary {
                 color: #6264a7;
                 border-color: #6264a7;
-                
+                font-family: 'Poppins', sans-serif;
             }
 
             .btn-outline-primary:hover{
                 color: whitesmoke;
                 background-color:  #6264a7;
-                border-color: #6264a7;
+                border-color:#6264a7;
                 
             }
-            
+
+            .btn-primary new-meeting{
+                font-family: 'Poppins', sans-serif;
+            }
+            .bg-light{
+                background-color:  #6264a7!important;
+            }
+            .featured-services .icon-box {
+                padding: 30px;
+                position: relative;
+                overflow: hidden;
+                background: #fff;
+                box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+                transition: all 0.3s ease-in-out;
+                border-radius: 8px;
+                z-index: 1;
+                }
+
+                .featured-services .icon-box::before {
+                content: '';
+                position: absolute;
+                background: #cbe0fb;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                top: 100%;
+                transition: all 0.3s;
+                z-index: -1;
+                }
+
+                .featured-services .icon-box:hover::before {
+                background: #6264a7;
+                top: 0;
+                border-radius: 0px;
+                }
+
+                .featured-services .icon {
+                margin-bottom: 15px;
+                }
+
+                .featured-services .icon i {
+                font-size: 48px;
+                line-height: 1;
+                color: #6264a7;
+                transition: all 0.3s ease-in-out;
+                }
+
+                .featured-services .title {
+                font-weight: 700;
+                margin-bottom: 15px;
+                font-size: 18px;
+                }
+
+                .featured-services .title a {
+                color: #111;
+                }
+
+                .featured-services .description {
+                font-size: 15px;
+                line-height: 28px;
+                margin-bottom: 0;
+                }
+
+                .featured-services .icon-box:hover .title a, .featured-services .icon-box:hover .description {
+                color: #fff;
+                }
+
+                .featured-services .icon-box:hover .icon i {
+                color: #fff;
+                }
+
 
         </style>
 
