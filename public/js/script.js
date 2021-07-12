@@ -1,3 +1,4 @@
+//Web-app could smoothly run with proper ortntation in following devices
 function detectMob() {
     const toMatch = [
         /Android/i,
@@ -13,9 +14,9 @@ function detectMob() {
         return navigator.userAgent.match(toMatchItem);
     });
 }
+//variables declaration
 const socket = io("/");
 const videoGrid = document.getElementById("video-grid");
-// const name = prompt("Your name");
 const myPeer = new Peer();
 
 var Peer_ID;
@@ -24,7 +25,7 @@ myVideo.muted = true;
 var myVideoStream;
 var myVideoTrack;
 const peers = {};
-
+//connecting the user on a video call enabling audio and video
 navigator.mediaDevices
     .getUserMedia({ audio: true })
     .then((stream) => {
@@ -50,7 +51,7 @@ navigator.mediaDevices
                 processStream(myVideoStream);
             });
     });
-
+//disconneting the user
 socket.on("user-disconnected", (userId, count) => {
     if (peers[userId]) {
         peers[userId].close();
@@ -65,7 +66,7 @@ function processStream(stream) {
         audio: myVideoStream.getAudioTracks()[0].enabled,
         video: myVideoStream.getVideoTracks()[0].enabled,
     });
-    // recieve the others stream
+    // recieve the other user's stream
     myPeer.on("call", (call) => {
         peers[call.peer] = call;
         call.answer(myVideoStream);
@@ -95,14 +96,17 @@ function processStream(stream) {
         changeCount(count);
     });
 }
+//Every Peer object is assigned a random, unique ID when it's created.
 myPeer.on("open", (id) => {
     Peer_ID = id;
     console.log("peer id is : ", id);
 });
+//updating participants number
 const changeCount = (count) => {
     const counter = document.getElementById("user-number");
     counter.innerHTML = count;
 };
+//connecting to new user
 function connectToNewUser(userId, stream) {
     // set others peerid and send my stream
     const call = myPeer.call(userId, stream);
@@ -155,11 +159,6 @@ function addVideoStream(video, stream, peerId, user) {
     pinBtn.classList.add("pin-button");
     pinBtn.innerHTML = `<ion-icon name="expand-outline"></ion-icon>`;
 
-    // create option button
-    // const optionBtn = document.createElement("button");
-    // optionBtn.classList.add("video-element");
-    // optionBtn.classList.add("options-button");
-    // optionBtn.innerHTML = `<ion-icon name="ellipsis-horizontal-outline"></ion-icon>`;
 
     // main wrapper
     const videoWrapper = document.createElement("div");
@@ -199,6 +198,7 @@ function addVideoStream(video, stream, peerId, user) {
 
      videoGrid.append(videoWrapper);
 
+     //creates and returns a new observer which invokes a specified callback
     const observer = new MutationObserver((mutationsList, observer) => {
         const removeNodeLength = mutationsList[0].removedNodes.length;
         const targetNode = mutationsList[0].target;
@@ -224,7 +224,7 @@ const eventAdd = (element) => {
     });
 };
 
-// share screen
+// Screen Sharing Feature
 const shareScreenBtn = document.getElementById("share-screen");
 shareScreenBtn.addEventListener("click", (e) => {
     if (e.target.classList.contains("true")) return;
@@ -271,7 +271,7 @@ shareScreenBtn.addEventListener("click", (e) => {
             };
         });
 });
-
+//Stop Screen Sharing 
 const stopPresenting = (videoTrack) => {
     shareScreenBtn.classList.remove("true");
     shareScreenBtn.setAttribute("tool_tip", "Present Screen");
@@ -283,7 +283,7 @@ const stopPresenting = (videoTrack) => {
     }
     replaceVideoTrack(myVideoStream, myVideoTrack);
 };
-
+//Zoom in the video of the user
 const crossBtnClickEvent = (e) => {
     const videoWrapper = e.target.parentElement;
     if (videoWrapper.classList.contains("zoom-video")) {
@@ -314,13 +314,13 @@ videoToggleBtn.addEventListener("click", (e) => {
         currentElement.setAttribute("tool_tip", "Video Off");
     }
 });
-
+//Turn-Off the video
 const videoWrapperVideoToggle = (element, type) => {
     const videoWrapper = element.previousSibling;
     if (type) videoWrapper.classList.remove("video-disable");
     else videoWrapper.classList.add("video-disable");
 };
-
+//Mute the audio
 const micToggleButton = document.getElementById("mic-toggle");
 micToggleButton.addEventListener("click", (e) => {
     const enabled = myVideoStream.getAudioTracks()[0].enabled;
@@ -363,10 +363,6 @@ const videoWrapperMicToggle = (element, type) => {
     }
 };
 
-// const shareBtn = document.querySelector(".share-btn");
-// shareBtn.addEventListener("click", (e) => {
-//   e.target.parentElement.classList.toggle("active");
-// });
 
 const meetingToggleBtn = document.getElementById("meeting-toggle");
 meetingToggleBtn.addEventListener("click", (e) => {
@@ -391,16 +387,6 @@ meetingToggleBtn.addEventListener("click", (e) => {
     } else location.replace(`/`);
 });
 
-// copy text
-// const copyBtn = document.getElementById("copy");
-// copyBtn.addEventListener("mousedown", (e) => {
-//   const text = `https://digiclass.site/${ROOM_ID}`;
-//   navigator.clipboard.writeText(text);
-//   copyBtn.style.setProperty("--tooltip", '"copied"');
-// });
-// copyBtn.addEventListener("mouseout", (e) => {
-//   copyBtn.style.setProperty("--tooltip", '"copy"');
-// });
 const camToggleBtn = document.getElementById("cams-toggle");
 camToggleBtn.addEventListener("click", (e) => {
     myVideoStream.getTracks().forEach((track) => {
@@ -537,7 +523,7 @@ recordingBtn.addEventListener("click", (e) => {
         }
     }
 });
-
+// Video Recording
 const record = (stream) => {
     recorder = new MediaRecorder(stream, {
         mineType: "video/webm;codecs=H264",
@@ -604,11 +590,12 @@ class SE {
         this.element.remove();
     }
 }
-// if (USER_TYPE !== "admin") recordingBtn.remove();
+
 const scrollDown = (query) => {
     var objDiv = document.querySelector(query);
     objDiv.scrollTop = objDiv.scrollHeight;
 };
+//Send Message
 const addMessage = (sender, userName, message) => {
     const messageBoxButton = document.getElementById("message-box");
     const chatPanel = document.getElementById("chat-panel");
@@ -638,7 +625,7 @@ chatForm.addEventListener("submit", (e) => {
     scrollDown(".chat-box");
     chatInput.value = "";
 });
-
+//Scroll Down in Chatbox
 socket.on("client-podcast", (data, userName) => {
     console.log(userName + ": " + data);
     addMessage("user", userName, data);

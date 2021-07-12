@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+//for storing user's information 
 const user = mongoose.Schema({
   email: {
     type: String,

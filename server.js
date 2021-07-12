@@ -38,14 +38,11 @@ const db = process.env.MONGO_URI;
             useFindAndModify: false
         });
         console.log("MongooseDB Connected ....");
-
     } catch (err) {
         console.log(err.message);
         process.exit(1);
     }
-
 }
-
 module.exports = connectDB;*/
 
 /*module.exports = async () => {

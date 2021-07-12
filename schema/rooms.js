@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+//for storing meeting's information
 const rooms = mongoose.Schema({
     roomId: {
         type: String,

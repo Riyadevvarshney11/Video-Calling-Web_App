@@ -6,7 +6,7 @@ const user = require("../../schema/user");
 route.get("/", notAuthorize, (req, res) => {
   res.render("auth/signup.ejs", { tabName: "Register Mcrosoft Teams" });
 });
-
+//authenticating
 route.post("/", notAuthorize, (req, res) => {
   user.findOne({ username: req.body.username }, (err, data) => {
     if (err) console.log(err);

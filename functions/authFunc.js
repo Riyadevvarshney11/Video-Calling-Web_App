@@ -1,3 +1,4 @@
+//for authenticating the network
 const authorize = (req, res, next) => {
     if (req.isAuthenticated()) {
       return next();

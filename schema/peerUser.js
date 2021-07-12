@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+//peerUser information
 const peerUser = mongoose.Schema({
   peerId: {
     type: String,

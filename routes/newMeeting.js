@@ -1,3 +1,4 @@
+//new meeting js file
 const express = require("express");
 const route = express.Router();
 const { authorize } = require("../functions/authFunc");

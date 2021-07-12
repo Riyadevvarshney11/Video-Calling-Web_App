@@ -1,3 +1,4 @@
+//loader to request a set of resources and react once they've completed loading
 window.onload = function () {
     const loader = document.createElement("div");
     loader.classList.add("card-wrapper");
@@ -12,6 +13,7 @@ window.onload = function () {
           <p>Loading ....</p>
       </div>`;
     document.body.appendChild(loader);
+    //timeout condition
     setTimeout(() => {
       loader.remove();
     }, 5000);
