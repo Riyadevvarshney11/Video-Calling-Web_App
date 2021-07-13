@@ -30,7 +30,7 @@ Demo Video:
 
 * Team's Meeting
 
-![ss3](https://user-images.githubusercontent.com/59473485/125424749-ab757a51-e824-40f8-97fe-f7ee7b58da93.png)
+![Video](https://user-images.githubusercontent.com/59473485/125503524-3d4ec985-b78a-4cf3-bdb4-12b9b8c41019.png)
 
 * Chat System
 
