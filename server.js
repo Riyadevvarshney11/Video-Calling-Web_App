@@ -21,9 +21,9 @@ const peerUser = require("./data_schema/peerUser");
 const room = require("./data_schema/rooms");
 
 const videoRoom = require("./team_routes/video");
-const signup = require("./team_routes/authenticate/signup");
-const login = require("./team_routes/authenticate/login");
-const logout = require("./team_routes/authenticate/logout");
+const signup = require("./team_routes/auth/signup");
+const login = require("./team_routes/auth/login");
+const logout = require("./team_routes/auth/logout");
 const index = require("./team_routes/index");
 const newMeeting = require("./team_routes/newMeeting");
 const db = process.env.MONGO_URI;
@@ -84,7 +84,7 @@ app.use(passport.session());
 app.use(express.static("public"));
 app.use(flash());
 app.use(require("express-ejs-layouts"));
-app.set("layout", "frontend/layout");
+app.set("layout", "layouts/layout");
 //Join Room
 app.post("/join-room", (req, res) => {
     res.redirect(`/${req.body.room_id}`);

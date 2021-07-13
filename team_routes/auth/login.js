@@ -5,7 +5,7 @@ const { notAuthorize } = require("../../security_functions/authenFunc");
 const passport = require("passport");
 //Login Part
 route.get("/", notAuthorize, (req, res) => {
-  res.render("authenticate/login.ejs", { tabName: "Login Microsoft Teams" });
+  res.render("auth/login.ejs", { tabName: "Login Microsoft Teams" });
 });
 route.post(
   "/",

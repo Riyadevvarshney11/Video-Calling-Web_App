@@ -5,7 +5,7 @@ const { notAuthorize } = require("../../security_functions/authenFunc");
 const user = require("../../data_schema/user");
 //Not Authorized
 route.get("/", notAuthorize, (req, res) => {
-  res.render("authenticate/signup.ejs", { tabName: "Register Mcrosoft Teams" });
+  res.render("auth/signup.ejs", { tabName: "Register Mcrosoft Teams" });
 });
 //authenticating
 route.post("/", notAuthorize, (req, res) => {

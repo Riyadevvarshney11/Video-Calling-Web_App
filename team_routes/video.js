@@ -8,7 +8,7 @@ route.get("/:room", authorize, async (req, res) => {
   res.render("room", {
     tabName: "Microsft Teams",
     count: roomData ? roomData.count : 0,
-    layout: "frontend/videoLayout",
+    layout: "layouts/videoLayout",
     roomId: req.params.room,
     screen: req.query.screen,
     user: req.user,
