@@ -53,6 +53,10 @@ $ git clone https://github.com/Riyadevvarshney11/video-call-webapp.git
 $ npm install
 $ node server.js
 ```
+For opening the Chat System use folllowing login credentials:
+Username: Microsoft
+Password: 123123
+
 ## Features
 ***
 Microsoft Teams Clone features:
