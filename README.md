@@ -1,3 +1,5 @@
+![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504423-045112f0-8105-4fef-b0cc-1df962eba7ca.png)
+![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504453-3dd69551-ba47-474a-b9c0-9fde820fc1dc.png)
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Live Demo](#live-demo)
@@ -33,9 +35,7 @@ Demo Video:
 ![Video](https://user-images.githubusercontent.com/59473485/125503524-3d4ec985-b78a-4cf3-bdb4-12b9b8c41019.png)
 
 * Chat System
-
-![ss4](https://user-images.githubusercontent.com/59473485/125435931-259e0e7c-1198-461f-9f6e-80589758ed4b.png)
-
+![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504468-2c50d3b7-a0c2-4529-8571-2eb17f5dedc6.png)
 
 ## Technologies
 ***
