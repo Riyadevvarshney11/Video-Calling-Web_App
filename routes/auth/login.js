@@ -1,7 +1,7 @@
 //login page
 const express =require("express");
 const route =express.Router();
-const { notAuthorize } = require("../../functions/authFunc");
+const { notAuthorize } = require("../../functions/authenFunc");
 const passport = require("passport");
 //Login Part
 route.get("/", notAuthorize, (req, res) => {
