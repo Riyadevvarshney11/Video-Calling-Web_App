@@ -1,8 +1,9 @@
 const express = require("express");
 const route = express.Router();
-const { notAuthorize } = require("../../functions/authFunc");
+//Authorized
+const { notAuthorize } = require("../../functions/authenticateFunc");
 const user = require("../../schema/user");
-
+//Not Authorized
 route.get("/", notAuthorize, (req, res) => {
   res.render("auth/signup.ejs", { tabName: "Register Mcrosoft Teams" });
 });

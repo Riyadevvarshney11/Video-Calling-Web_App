@@ -9,10 +9,12 @@ const peerUser = mongoose.Schema({
     type: String,
     require: true,
   },
+  //audio
   audio: {
     type: Boolean,
     required: true,
   },
+  //video 
   video: {
     type: Boolean,
     required: true,

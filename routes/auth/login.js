@@ -1,8 +1,9 @@
 //login page
-const express = require("express");
-const route = express.Router();
-const { notAuthorize } = require("../../functions/authFunc");
+const express =require("express");
+const route =express.Router();
+const { notAuthorize } = require("../../functions/authenticateFunc");
 const passport = require("passport");
+//Login Part
 route.get("/", notAuthorize, (req, res) => {
   res.render("auth/login.ejs", { tabName: "Login Microsoft Teams" });
 });

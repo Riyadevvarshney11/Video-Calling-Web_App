@@ -1,6 +1,6 @@
 const express = require("express");
 const route = express.Router();
-const { authorize } = require("../functions/authFunc");
+const { authorize } = require("../functions/authenticateFunc");
 const room = require("../schema/rooms");
 
 route.get("/:room", authorize, async (req, res) => {
