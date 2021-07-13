@@ -1,7 +1,9 @@
 # video-call-webapp
 This web app is an online portal that enables users to communicate via Video and Audio Calling or Text-Messaging.
 
-Demo Link : https://teams-videocall-webapp.herokuapp.com/
+Project Link: https://teams-videocall-webapp.herokuapp.com/
+
+Demo Video: 
 
 ![ss1](https://user-images.githubusercontent.com/59473485/125424577-ebf7dc8f-e561-42e9-b051-a1e466be3619.png)
 
@@ -10,13 +12,13 @@ Demo Link : https://teams-videocall-webapp.herokuapp.com/
 ![ss4](https://user-images.githubusercontent.com/59473485/125424756-0d24d4e2-bee7-4455-b1a5-7b09de5910d0.png)
 
 
-This web app provides the following features:
-1. Video/ Audio Calling
+#Features
+1. Video/ Audio Calling (Enable more than 2 users to communicate with each other)
 2. Real Time Chat system (Before, During, and After the Team's Meeting)
 3. Disable/Enable Video
 4. Mute/Unmute Audio
-5. Screen Recording
-6. Screen Sharing
+5. Screen Recording (It will get automatically stored on your system)
+6. Screen Sharing 
 7. Sharing the Meeting Link
 8. Show Time Stamp during the Team's Meeting
 9. Display No. of participants in the meeting.
@@ -30,7 +32,7 @@ This web app provides the following features:
 17. Check the online status of members of the channel.
 18. Notification while sending the chat with a beep sound.
 
-Tech Stack Used:
+#Build With
 1. WebRTC 
 2. Peerjs
 3. Node.js
@@ -39,3 +41,4 @@ Tech Stack Used:
 6. MongoDB
 7. React
 8. Chatengine.io
+
