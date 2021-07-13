@@ -41,25 +41,24 @@ $ npm start
 ## Features
 ***
 Microsoft Teams Clone features:
-> Video/ Audio Calling (Enable more than 2 users to communicate with each other)
-
-> Real Time Chat system (Before, During, and After the Team's Meeting)
-> Disable/Enable Video
-> Mute/Unmute Audio
-> Screen Recording (It will get automatically stored on your system)
-> Screen Sharing 
-> Sharing the Meeting Link
-> Show Time Stamp during the Team's Meeting
-> Display No. of participants in the meeting.
-> Pop up Notification while sending messages.
-> Leave Meeting
-> Save Chat history.
-> Send Photographs to your peers.
-> Create/ Delete multiple team channels as admin and Add participants into it.
-> Displaying Gallery of each Channel
-> Enable Read Receipts Feature
-> Check the online status of members of the channel.
-> Notification while sending the chat with a beep sound.
+* Video/ Audio Calling (Enable more than 2 users to communicate with each other)
+* Real Time Chat system (Before, During, and After the Team's Meeting)
+* Disable/Enable Video
+* Mute/Unmute Audio
+* Screen Recording (It will get automatically stored on your system)
+* Screen Sharing 
+* Sharing the Meeting Link
+* Show Time Stamp during the Team's Meeting
+* Display No. of participants in the meeting.
+* Pop up Notification while sending messages.
+* Leave Meeting
+* Save Chat history.
+* Send Photographs to your peers.
+* Create/ Delete multiple team channels as admin and Add participants into it.
+* Displaying Gallery of each Channel
+* Enable Read Receipts Feature
+* Check the online status of members of the channel.
+* Notification while sending the chat with a beep sound.
 
 ## FAQs
 ***
