@@ -3,7 +3,7 @@ This web app is an online portal that enables users to communicate via Video and
 
 Demo Link : 
 
-![Screenshot](Screenshots\ss1.png)
+
 
 This web app provides the following features:
 1. Video/ Audio Calling
