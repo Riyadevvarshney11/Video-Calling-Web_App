@@ -3,13 +3,12 @@
 2. [Technologies](#technologies)
 3. [Installation](#installation)
 4. [Features](#features)
-5. [FAQs](#faqs)
 ### General Info
 ***
 This web app is an online portal that enables users to communicate via Video and Audio Calling or Text-Messaging.
-### Screenshot
+### Screenshots
+* Home Page
 ![ss1](https://user-images.githubusercontent.com/59473485/125424577-ebf7dc8f-e561-42e9-b051-a1e466be3619.png)
-
 
 ![ss5](https://user-images.githubusercontent.com/59473485/125425454-3f1133a5-a525-4b44-bbb2-e97ef2eb033b.png) 
 
@@ -33,10 +32,9 @@ A list of technologies used within the project:
 ***
 A little intro about the installation. 
 ```
-$ git clone https://example.com
-$ cd ../path/to/the/file
+$ git clone https://github.com/Riyadevvarshney11/video-call-webapp.git
 $ npm install
-$ npm start
+$ node server.js
 ```
 ## Features
 ***
@@ -59,24 +57,3 @@ Microsoft Teams Clone features:
 * Enable Read Receipts Feature
 * Check the online status of members of the channel.
 * Notification while sending the chat with a beep sound.
-
-## FAQs
-***
-A list of frequently asked questions
-1. **This is a question in bold**
-Answer to the first question with _italic words_. 
-2. __Second question in bold__ 
-To answer this question, we use an unordered list:
-* First point
-* Second Point
-* Third point
-3. **Third question in bold**
-Answer to the third question with *italic words*.
-4. **Fourth question in bold**
-| Headline 1 in the tablehead | Headline 2 in the tablehead | Headline 3 in the tablehead |
-|:--------------|:-------------:|--------------:|
-| text-align left | text-align center | text-align right |
-
-
-
-
