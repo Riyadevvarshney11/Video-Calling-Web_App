@@ -55,9 +55,9 @@ $ node server.js
 ```
 For opening the Chat System use folllowing login credentials:
 
-Username: Microsoft
+> Username: Microsoft
 
-Password: 123123
+> Password: 123123
 
 ## Features
 ***
