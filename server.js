@@ -84,11 +84,22 @@ app.use(passport.session());
 app.use(express.static("public"));
 app.use(flash());
 app.use(require("express-ejs-layouts"));
-app.set("layout", "layouts/layout");
-
+app.set("layout", "frontend/layout");
+//Join Room
 app.post("/join-room", (req, res) => {
     res.redirect(`/${req.body.room_id}`);
 });
+// login
+app.use("/login", login);
+
+// signup
+app.use("/signup", signup);
+
+// logout
+app.use("/logout", logout);
+
+// video room
+app.use("/", videoRoom); 
 
 // index route
 app.use("/", index);
