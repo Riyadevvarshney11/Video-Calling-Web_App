@@ -1,19 +1,27 @@
 ## Table of Contents
 1. [General Info](#general-info)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Features](#features)
+2. [Live Demo](#live-demo)
+3. [Technologies](#technologies)
+4. [Installation](#installation)
+5. [Features](#features)
 ### General Info
 ***
-This web app is an online portal that enables users to communicate via Video and Audio Calling or Text-Messaging.
+This web app is an online portal that enables users to communicate via Video and Audio Calling or Text-Messaging. It supports commuication between two or more individuals.
+
+## Live Demo 
+***
+Project Link: https://teams-videocall-webapp.herokuapp.com/
+
+Demo Video: 
+
 ### Screenshots
 * Home Page
 ![ss1](https://user-images.githubusercontent.com/59473485/125424577-ebf7dc8f-e561-42e9-b051-a1e466be3619.png)
-
+* Sign Up
 ![ss5](https://user-images.githubusercontent.com/59473485/125425454-3f1133a5-a525-4b44-bbb2-e97ef2eb033b.png) 
-
+* Team's Meeting
 ![ss3](https://user-images.githubusercontent.com/59473485/125424749-ab757a51-e824-40f8-97fe-f7ee7b58da93.png)
-
+* Chat System
 ![ss4](https://user-images.githubusercontent.com/59473485/125424756-0d24d4e2-bee7-4455-b1a5-7b09de5910d0.png)
 
 ## Technologies
@@ -57,3 +65,5 @@ Microsoft Teams Clone features:
 * Enable Read Receipts Feature
 * Check the online status of members of the channel.
 * Notification while sending the chat with a beep sound.
+
+## 
