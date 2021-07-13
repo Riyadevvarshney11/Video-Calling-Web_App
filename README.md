@@ -6,7 +6,12 @@
 5. [Features](#features)
 ### General Info
 ***
-This web app is an online portal that enables users to communicate via Video and Audio Calling or Text-Messaging. It supports communication between two or more individuals.
+This web app is an online portal that enables users to communicate via Video and Audio Calling or Text-Messaging. It supports communication between two or more individuals.  Agile Methodology was used for building this project. The best Agile practices adopted were :
+
+* Proper Planning
+* Keeping Product Backlog
+* Maintaining a SPRINT Burndown and a Product Burndown.
+* Adopting the concepts of relative estimation and velocity.
 
 ## Live Demo 
 ***
