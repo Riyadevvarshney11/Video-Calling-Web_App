@@ -31,10 +31,11 @@ Demo Video: https://youtu.be/MywlX0E_WVs
 
 * Team's Meeting
 
-![Video](https://user-images.githubusercontent.com/59473485/125503524-3d4ec985-b78a-4cf3-bdb4-12b9b8c41019.png)
+![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504468-2c50d3b7-a0c2-4529-8571-2eb17f5dedc6.png)
 
 * Chat System
-![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504468-2c50d3b7-a0c2-4529-8571-2eb17f5dedc6.png)
+
+![ss4](https://user-images.githubusercontent.com/59473485/125504927-06ddd471-901a-4b69-b7bb-e6234637c864.png)
 
 ## Technologies
 ***
