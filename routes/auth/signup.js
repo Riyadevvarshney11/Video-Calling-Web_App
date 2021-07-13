@@ -1,7 +1,7 @@
 const express = require("express");
 const route = express.Router();
 //Authorized
-const { notAuthorize } = require("../../functions/authenticateFunc");
+const { notAuthorize } = require("../../functions/authFunc");
 const user = require("../../schema/user");
 //Not Authorized
 route.get("/", notAuthorize, (req, res) => {
