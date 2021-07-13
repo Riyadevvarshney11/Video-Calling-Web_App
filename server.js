@@ -11,21 +11,21 @@ const flash = require("express-flash");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
-const passportAuthenticator = require("./functions/passportStrategy");
-const user = require("./schema/user");
+const passportAuthenticator = require("./security_functions/passportStrategy");
+const user = require("./data_schema/user");
 const peerServer = ExpressPeerServer(server, {
     debug: true,
     allow_discovery: true
 });
-const peerUser = require("./schema/peerUser");
-const room = require("./schema/rooms");
+const peerUser = require("./data_schema/peerUser");
+const room = require("./data_schema/rooms");
 
-const videoRoom = require("./routes/video");
-const signup = require("./routes/auth/signup");
-const login = require("./routes/auth/login");
-const logout = require("./routes/auth/logout");
-const index = require("./routes/index");
-const newMeeting = require("./routes/newMeeting");
+const videoRoom = require("./team_routes/video");
+const signup = require("./team_routes/authenticate/signup");
+const login = require("./team_routes/authenticate/login");
+const logout = require("./team_routes/authenticate/logout");
+const index = require("./team_routes/index");
+const newMeeting = require("./team_routes/newMeeting");
 const db = process.env.MONGO_URI;
 
 

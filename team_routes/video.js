@@ -1,7 +1,7 @@
 const express = require("express");
 const route = express.Router();
-const { authorize } = require("../functions/authenFunc");
-const room = require("../schema/rooms");
+const { authorize } = require("../security_functions/authenFunc");
+const room = require("../data_schema/rooms");
 //Video Display
 route.get("/:room", authorize, async (req, res) => {
   const roomData = await room.findOne({ roomId: req.params.room }).exec();

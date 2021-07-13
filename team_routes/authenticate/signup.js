@@ -1,11 +1,11 @@
 const express = require("express");
 const route = express.Router();
 //Authorized
-const { notAuthorize } = require("../../functions/authenFunc");
-const user = require("../../schema/user");
+const { notAuthorize } = require("../../security_functions/authenFunc");
+const user = require("../../data_schema/user");
 //Not Authorized
 route.get("/", notAuthorize, (req, res) => {
-  res.render("auth/signup.ejs", { tabName: "Register Mcrosoft Teams" });
+  res.render("authenticate/signup.ejs", { tabName: "Register Mcrosoft Teams" });
 });
 //authenticating
 route.post("/", notAuthorize, (req, res) => {
