@@ -1,5 +1,4 @@
-![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504423-045112f0-8105-4fef-b0cc-1df962eba7ca.png)
-![2021-07-13 (18)](https://user-images.githubusercontent.com/59473485/125504453-3dd69551-ba47-474a-b9c0-9fde820fc1dc.png)
+
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Live Demo](#live-demo)
@@ -19,7 +18,7 @@ This web app is an online portal that enables users to communicate via Video and
 ***
 Project Link: https://teams-videocall-webapp.herokuapp.com/
 
-Demo Video: 
+Demo Video: https://youtu.be/MywlX0E_WVs
 
 ### Screenshots
 * Home Page
