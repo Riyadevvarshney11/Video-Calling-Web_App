@@ -72,13 +72,13 @@ mongoose.connect('mongodb+srv://riya:riya@videochat.ye8co.mongodb.net/myFirstDat
         console.log("mongo error",error);
     }); 
 
-
+//Authenticating password
 passportAuthenticator(passport, user);
 app.use(express.json());
 app.use("/peerjs", peerServer);
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
-app.use(cookie({ maxAge: 30 * 24 * 60 * 60 * 1000, keys: ["soumenkhara"] }));
+app.use(cookie({ maxAge: 30 * 24 * 60 * 60 * 1000, keys: ["riya"] }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static("public"));
