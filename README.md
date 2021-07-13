@@ -2,7 +2,7 @@
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Collaboration](#collaboration)
+4. [Features](#features)
 5. [FAQs](#faqs)
 ### General Info
 ***
@@ -28,7 +28,7 @@ A list of technologies used within the project:
 * MongoDB
 * React
 * Chatengine.io
-*
+
 ## Installation
 ***
 A little intro about the installation. 
@@ -42,6 +42,7 @@ $ npm start
 ***
 Microsoft Teams Clone features:
 > Video/ Audio Calling (Enable more than 2 users to communicate with each other)
+
 > Real Time Chat system (Before, During, and After the Team's Meeting)
 > Disable/Enable Video
 > Mute/Unmute Audio
